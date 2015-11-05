@@ -3,7 +3,7 @@
 import geocoder
 import time
 
-geocoded_data = open('geohappy.tab', 'w') #the geocoded output - i've found tab delimited tends to be more ArcGIS-friendly
+geocoded_data = open('geohappy.tab', 'w')
 data = []
 
 print "Initiating geocoding...."
