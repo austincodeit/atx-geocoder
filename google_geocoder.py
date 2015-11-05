@@ -26,21 +26,21 @@ geocoded_data.write("originalAddress" + "\t" + "foundAddress" + "\t" + "Lat" + "
 for entry in data:
         cleanEntry = entry
         for scrubber in scrubbers:
-                 cleanEntry = cleanEntry.replace(scrubber, " ") #replace flagged strings with spaces
-        lookup = cleanEntry + ", Austin, TX" #add the city/state to street address
+                 cleanEntry = cleanEntry.replace(scrubber, " ")
+        lookup = cleanEntry + ", Austin, TX"
         try:
-                time.sleep(.3) # delay for .3 seconds between lookup requests...the api limit is 5 requests per second, 2500 per 24 hours
-                address = geocoder.google(lookup) #searchs googlemaps for placename, returns first result  switch 'google' to change geocoders
+                time.sleep(.3) #  delay for .3 seconds between lookup requests...the api limit is 5 requests per second, 2500 per 24 hours
+                address = geocoder.google(lookup)
                 geocoded_data.write(entry + "\t")
-                geocoded_data.write(address.address) #write the street, city, state, country zip
+                geocoded_data.write(address.address)
                 geocoded_data.write("\t")
-                geocoded_data.write(str(address.lat)) #write lat, then lon
+                geocoded_data.write(str(address.lat))
                 geocoded_data.write("\t")
                 geocoded_data.write(str(address.lng))
                 geocoded_data.write("\t")
-                geocoded_data.write(address.county) #write accuracy
+                geocoded_data.write(address.county)
                 geocoded_data.write("\t")
-                geocoded_data.write(address.accuracy) #write accuracy
+                geocoded_data.write(address.accuracy)
                 geocoded_data.write("\n")
                 count = count + 1
         except:
