@@ -1,5 +1,5 @@
 # google_geocoder
-Use [geocoder](https://pypi.python.org/pypi/geocoder) to access googlemaps api and return address lat/lon. 
+Uses [geocoder](https://pypi.python.org/pypi/geocoder) to access googlemaps api and return address lat/lon. 
 
 Output coordinate system is WGS 1984
 
